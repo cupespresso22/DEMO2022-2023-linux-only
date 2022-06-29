@@ -75,15 +75,15 @@
 ###### #Пример соответствует самой первой введёной строке:
 ###### nmc(TAB) co(TAB) mod(TAB) Wi(TAB) 1 ipv4.a(TAB) 5.5.5.1/24 ipv4.me(TAB) m(TAB) au(TAB) y(TAB) con-n(TAB) ISP-RTRR.
 #### RTR-R
-![изображение](https://user-images.githubusercontent.com/28905300/176009508-25841047-bf5d-4204-b272-df236b50be8a.png)
+![изображение](https://user-images.githubusercontent.com/28905300/176381588-691c1fa6-a173-443a-98d9-a395dd1afcc0.png)
 #### RTR-L
-![изображение](https://user-images.githubusercontent.com/28905300/176009613-22e770a6-8af6-4019-a9fa-eb30aeaa4587.png)
+![изображение](https://user-images.githubusercontent.com/28905300/176381793-9cb85679-d860-41ff-a184-8e01121ba158.png)
 #### WEB-L
-![изображение](https://user-images.githubusercontent.com/28905300/176009673-ef765062-bba4-4aa8-a785-1173aa87d463.png)
+![изображение](https://user-images.githubusercontent.com/28905300/176381968-10409a3c-c436-4f75-a10f-e2ff426d656f.png)
 #### SRV
-![изображение](https://user-images.githubusercontent.com/28905300/176009754-57c53c09-cf9b-4f66-8984-2c6415919950.png)
+![изображение](https://user-images.githubusercontent.com/28905300/176382133-444ea1e8-10a0-49cc-8937-d87cad6696fe.png)
 #### WEB-R
-![изображение](https://user-images.githubusercontent.com/28905300/176009814-47699208-042a-4e48-a9a5-20cc429be05d.png)
+![изображение](https://user-images.githubusercontent.com/28905300/176382245-a676d222-22e9-4c10-bc44-538660cad981.png)
 #### CLI
 ###### #На виртуальной машине CLI, по заданию, операционная система Windows 10. Порядок изменения имени хоста и IP-адреса там другой:
 ![изображение](https://user-images.githubusercontent.com/28905300/176009988-c0fa9d7a-74e4-4a4b-878b-08aa0375e485.png)

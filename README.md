@@ -1,7 +1,7 @@
 # DEMO2022-2023-linux-only
 (Свободный проект альтруистов) 100% выполненное задание (публичный вариант) к демонстрационному экзамену по сетевому и системному администрированию. Полностью и только на Debian. Основано на первоисточнике: https://github.com/storm39mad/DEMO2022/tree/main/azure
 
-В формате docx: [Very Easy Linux.docx](https://github.com/cupespresso22/DEMO2022-2023-linux-only/files/8994172/Very.Easy.Linux.docx)
+В формате docx: [Very Easy Linux.docx](https://github.com/cupespresso22/DEMO2022-2023-linux-only/files/9054494/Very.Easy.Linux.docx)
 
 ![изображение](https://user-images.githubusercontent.com/28905300/175996163-e7dbdb7b-2d18-4150-906a-ac925f3a66c7.png)
 

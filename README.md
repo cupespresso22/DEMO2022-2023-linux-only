@@ -365,5 +365,30 @@
 ![изображение](https://user-images.githubusercontent.com/28905300/177478926-a6e1b292-6156-4eff-bc11-2c8bf434c98a.png)
 
 ![изображение](https://user-images.githubusercontent.com/28905300/177479040-69b3ac79-1941-41b5-a7f2-8d2f4e46be2e.png)
+##
+3. Выполните настройку первого уровня системы синхронизации времени:
+   - Используется сервер ISP. 
+   - Сервер считает собственный источник времени верным, stratum=4;
+   - Сервер допускает подключение только через внешний адрес соответствующей платформы управления трафиком;
+     - Подразумевается обращение SRV для синхронизации времени;
+   - Клиент CLI должен использовать службу времени ISP;
 
-время
+![изображение](https://user-images.githubusercontent.com/28905300/177480336-603b7600-c1ea-4f95-9e34-1ca58a4a5e70.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177480761-5b68e66c-82a8-42a9-b1e6-8dba7ee5b39f.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177480823-de1bd665-ffce-417e-905d-f760b22b3f90.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177480886-4c1f8b11-5787-42fe-8b81-0ce97b000002.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177480950-11163af1-2f20-49e5-92f3-6738acaa7300.png)
+
+###### #Далее нужно зайти на CLI и синхронизировать время с ISP. Для начала, нужно любыми способами зайти в Панель Управления и выбрать «Дата и Время».
+
+![изображение](https://user-images.githubusercontent.com/28905300/177481182-55101bab-5535-40f2-9e0f-956198846260.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177481302-f01cfc9a-dfca-403c-b0c5-8e2d10f203c3.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177481443-9f47c8ae-1faa-4639-b331-c2b6959584e4.png)
+
+###### #Дополнительно

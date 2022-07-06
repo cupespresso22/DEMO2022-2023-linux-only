@@ -465,3 +465,17 @@
 
 ### *Все последующие операции выполняются одинаково на WEB-L и WEB-R!*
 
+![изображение](https://user-images.githubusercontent.com/28905300/177500887-ffef8685-b9a3-46f3-9f80-185c4744df12.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177500960-0b191ee1-2600-4268-b498-89fdeffaae3b.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177501072-6963eb89-b516-4452-935a-e311a26c2518.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177501158-a19b6f0d-a45c-4538-a84e-1ec60c3cc48e.png)
+
+###### #После выполнения тех же действий на WEB-L, в качестве итоговой проверки следует создать нового пользователя (желательно на WEB-L и WEB-R), зайти из под него и попробовать создать, отредактировать и удалить файлы по пути */opt/share*. Ограничений в действиях быть не должно.
+
+![изображение](https://user-images.githubusercontent.com/28905300/177501362-26afca70-2ce4-4598-97aa-c7a8f39462b8.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177501424-0e4d436d-ba2c-4012-8709-0033378f54b5.png)
+

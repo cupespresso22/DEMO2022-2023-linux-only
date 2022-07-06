@@ -301,7 +301,7 @@
 
 ![изображение](https://user-images.githubusercontent.com/28905300/177475502-0fd04009-ab21-4f11-82f8-0f934f248a35.png)
 
-![изображение](https://user-images.githubusercontent.com/28905300/177475621-69b23a69-7ec1-480a-85e2-b66fe98e8a6a.png)
+![изображение](https://user-images.githubusercontent.com/28905300/177479687-a5ea134a-ac87-43bf-9b6f-404bf3cecf81.png)
 
 ![изображение](https://user-images.githubusercontent.com/28905300/177475702-df4b9baa-0d73-4a98-9879-acb7ce6afb5c.png)
 ##

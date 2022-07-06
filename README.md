@@ -271,3 +271,99 @@
      - Маршрутизатор региона должен транслировать соответствующие порты DNS-службы в порты сервера SRV
    - Внешний клиент CLI должен использовать DNS-службу, развернутую на ISP, по умолчанию;
 ### *(Делегирование зоны — это не то же самое, что и создание slave-сервера! В нашем случае создаются два master-сервера!).*
+
+## Таблица 2. DNS-записи зон (demo.wsr)
+
+|Zone            |Type                |Key             |Meaning         |
+|  ------------- | -------------      | -------------  |  ------------- |
+| demo.wsr       | A                  | isp            | 3.3.3.1        |
+|                | A                  | www            | 4.4.4.100      |
+|                | A                  | www            | 5.5.5.100      |
+|                | CNAME              | internet       | isp            |
+|                | NS                 | int            | rtr-l.demo.wsr      |
+|                | A                  | rtr-l       | 4.4.4.100      |
+
+![изображение](https://user-images.githubusercontent.com/28905300/177474183-999afa2d-0566-4553-a806-37484f1e44c5.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177474251-820c87eb-56cb-4edf-aec6-4307f391a32d.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177474529-f8529ea4-3e2a-40ef-b1c0-0b5cef2bba81.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177474837-8a4e834c-9650-4bd4-aa98-e3c8158b3964.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177475181-5cd59dd8-0f1c-40ae-b833-46130941b95c.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177475284-f7edfbbf-eacb-44fd-8db1-c6929b58d1be.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177475362-b4719da0-1b05-41fb-86b4-394e6cd6b765.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177475449-cb95b5c3-3c53-4859-b2fc-6a8498b45f6c.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177475502-0fd04009-ab21-4f11-82f8-0f934f248a35.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177475621-69b23a69-7ec1-480a-85e2-b66fe98e8a6a.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177475702-df4b9baa-0d73-4a98-9879-acb7ce6afb5c.png)
+##
+2. Выполните настройку второго уровня DNS-системы стенда;
+   - Используется ВМ SRV;
+   - Обслуживается зона int.demo.wsr;
+     - Наполнение зоны должно быть реализовано в соответствии с Таблицей 2;
+   - Обслуживаются обратные зоны для внутренних адресов регионов
+     - Имена для разрешения обратных записей следует брать из Таблицы 2;
+   - Сервер принимает рекурсивные запросы, исходящие от адресов внутренних регионов;
+     - Обслуживание клиентов(внешних и внутренних),  обращающихся к к зоне int.demo.wsr, должно производится без каких либо ограничений по адресу источника;
+   - Внутренние хосты регионов (равно как и платформы управления трафиком) должны использовать данную DNS-службу для разрешения всех запросов имен;
+
+## Таблица 3. DNS-записи зон (int.demo.wsr)
+
+|Zone            |Type                |Key             |Meaning         |
+|  ------------- | -------------      | -------------  |  ------------- |
+| int.demo.wsr   | A                  | web-l           | 192.168.100.100        |
+|                | A                  | web-r           | 172.16.100.100      |
+|                | A                  | srv           | 192.168.100.200      |
+|                | A                  | rtr-l            | 192.168.100.254      |
+|                | A                  | rtr-r           | 172.16.100.254 |
+|                | A                  | webapp2           | 192.168.100.100        |
+|                | A                  | webapp2           | 172.16.100.100        |
+|                | CNAME              | webapp        | webapp2            |
+|                | CNAME              | ntp       | srv            |
+|                | CNAME              | dns       | srv           |
+
+###### #На SRV выполняются аналогичные шаги, вплоть до настройки apparmor. После apparmor — уже с дополнительными коррективами:
+
+![изображение](https://user-images.githubusercontent.com/28905300/177477382-f1ad7812-72a4-4bf7-b468-9e5f462ae1b9.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177477425-f2b487ac-9747-4647-9fa1-a08e5b0e116b.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177477574-aee2be53-f131-4290-9895-274d5e7100f8.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177477667-e3c7281e-90e3-44ef-ba05-f21f552d161d.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177477888-de22bf68-f8a0-4957-8687-26680e43328a.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177477970-a84c1fce-d9c9-4114-a64f-595559f89d21.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177478021-6ba233ac-3afe-419c-916e-ebb5c0d6cea3.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177478093-36f758b4-b67d-4b47-a39f-4bb766aab21a.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177478150-81d4a2ec-e3dd-45dc-a642-49ebb66de322.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177478238-e529352b-0089-4f87-8335-1ed17398933c.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177478404-9d4ddd94-c3eb-4d34-86e2-08cd7bd8efd6.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177478457-91bca651-9427-4263-83cb-ee6eb0e5298d.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177478518-301c9a1c-6a21-4d6c-9e36-675d7d4730aa.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177478577-18afa501-1961-4612-8f0c-f595514fd053.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177478725-ac6bc40c-e40f-4f00-b872-f7d7176021f7.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177478926-a6e1b292-6156-4eff-bc11-2c8bf434c98a.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177479040-69b3ac79-1941-41b5-a7f2-8d2f4e46be2e.png)
+
+время

@@ -497,3 +497,39 @@
 ###### #4.	Условие с принадлежностью файлов конкретному пользователю ставит под сомнение возможность использования Samba, так как там это крайне трудно реализовать.
 ###### #Поэтому в этом примере файловый сервер будет реализовываться помощью *NFS*.
 
+![изображение](https://user-images.githubusercontent.com/28905300/177512226-bb858994-e3b7-4c9c-9c0e-c07104abd3eb.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177512322-e37a8a51-3863-42c4-833a-05aeee0c5b5f.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177512438-7a9d6e13-663b-482f-872a-df34d763faab.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177512593-7af02043-094b-40c9-8c57-30d883a342a9.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177512680-49b79e84-16b3-41a3-b83e-cf8f7270b206.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177512781-b1065310-7122-4969-b165-9428eadfdeb3.png)
+
+###### #Теперь необходимо внести изменения в конфигурационный файл */etc/exports*, позволяющие осуществить монтирование каталогов с помощью NFS. Параметры первой добавленной строки позволят создавать файлы на SRV из под пользователя *tester*. Следующие четыре строки дают доступ хостам к каталогу */mnt/storage* и также выполняют функции первой строки.
+
+![изображение](https://user-images.githubusercontent.com/28905300/177513027-cc99cfed-9596-4d38-a9cf-5a30b1ab5194.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177513118-924eab2d-77dd-4ba7-b00b-23971dff1a25.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177513208-b2552e79-6093-4b5a-97b5-87558a028273.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177513349-30aaa8c5-addf-4f51-a85d-2dd532bc63dc.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177513419-3dbc8188-44bc-4db3-9178-cf068d47f5b2.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177513517-031f322a-573a-46e0-a45c-fde127487112.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177513634-deb40883-aa95-4917-8a36-7014764dfcd9.png)
+
+![изображение](https://user-images.githubusercontent.com/28905300/177513708-56a9897c-34a3-45ac-aadd-1d408e981a60.png)
+
+###### #Если ВДРУГ потребуется перезагрузить *SRV*, то скорее всего, после ввода команды *reboot*, появится такое сообщение. Ничего страшного в нём нет, потребуется только подождать 1-2 минуты до завершения перезагрузки.
+
+![изображение](https://user-images.githubusercontent.com/28905300/177513927-31cef7de-8808-49e9-9c10-0e8fae7f9323.png)
+
+###### #Проверка создания и доступа к файлам, из под других пользователей, аналогична первому варианту.
+
